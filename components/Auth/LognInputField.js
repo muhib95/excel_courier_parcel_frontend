@@ -12,7 +12,6 @@ export default function LogInInputField() {
   const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
-    
     e.preventDefault();
     setLoading(true);
     try {
@@ -21,7 +20,7 @@ export default function LogInInputField() {
         password,
         redirect: false,
       });
-
+      console.log(result);
       if (result?.error) {
         alert("Login failed");
       } else {
