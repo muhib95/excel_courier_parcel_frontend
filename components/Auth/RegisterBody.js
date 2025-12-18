@@ -6,7 +6,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function RegisterBody() {
-    const router = useRouter();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -40,24 +40,24 @@ export default function RegisterBody() {
       const data = await response.json();
       if (data?.success === true && data?.user) {
         const result = await signIn("credentials", {
-          phone:data?.user?.phone,
+          phone: data?.user?.phone,
           password,
           redirect: false,
         });
-         if (result?.error) {
-        alert("Register failed");
-      } else {
-        const sessionRes = await fetch("/api/auth/session");
-        const session = await sessionRes.json();
-        if (session?.user?.user?.role === "customer") {
-          router.replace("/customer");
-        } else if (session?.user?.user?.role === "agent") {
-          router.replace("/agent");
+        if (result?.error) {
+          alert("Register failed");
         } else {
-          router.replace("/admin");
+          const sessionRes = await fetch("/api/auth/session");
+          const session = await sessionRes.json();
+          if (session?.user?.user?.role === "customer") {
+            router.replace("/customer");
+          } else if (session?.user?.user?.role === "agent") {
+            router.replace("/agent");
+          } else {
+            router.replace("/admin");
+          }
         }
-      }
-      }else{
+      } else {
         alert(data?.message);
       }
     } catch (err) {
