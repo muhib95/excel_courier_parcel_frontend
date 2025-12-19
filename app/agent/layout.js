@@ -1,15 +1,12 @@
 import ResponsiveHeader from "@/components/Header/ResponsiveHeader";
+import React from "react";
 
-const CustomerLayout = ({ children }) => {
-  const typeHeader = "Customer";
+const AgentLayout = ({ children }) => {
+  const typeHeader = "Agent";
   const menu = [
     {
-      label: "Book",
-      link: "/customer",
-    },
-    {
-      label: "Booking History",
-      link: "/customer/bookinghistory",
+      label: "Home",
+      link: "/agent",
     },
   ];
   return (
@@ -22,4 +19,4 @@ const CustomerLayout = ({ children }) => {
   );
 };
 
-export default CustomerLayout;
+export default AgentLayout;

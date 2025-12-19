@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
-import LogoutButton from "../SignOut";
+import LogoutButton from "../Auth/SignOut";
 
 const Header = ({ openNav, typeHeader, menu }) => {
   const [navBg, setNavBg] = useState(false);
