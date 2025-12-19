@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📦 Courier Parcel Management System
 
-## Getting Started
+A role-based parcel booking and delivery tracking platform with map integration, PDF/CSV reporting, and real-time status updates.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔐 Demo Credentials
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Use these credentials to log in for each role:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Role     | Phone Number | Password |
+|----------|--------------|----------|
+| Customer | 01749958965  | 12345    |
+| Agent    | 01749958965  | 12345    |
+| Admin    | 01749958967  | 12345    |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧩 Project Overview
 
-To learn more about Next.js, take a look at the following resources:
+This system supports three distinct user roles with separate dashboards and permissions:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 👤 Customer
+- Register/login to the platform
+- Book new parcels
+- View personal booking list
+- Track parcel location on map (pickup to delivery)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🚚 Agent
+- Login to view assigned parcels
+- Update parcel delivery status (Picked, In Transit, Delivered, etc.)
+- See optimized delivery route on the map
 
-## Deploy on Vercel
+### 🛠️ Admin
+- Login to view analytics dashboard
+- View and manage all users and parcel bookings
+- Assign parcels to agents
+- Generate and download PDF and CSV reports
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js, Tailwind CSS, React Leaflet
+- **Backend**: Express.js, MongoDB, Mongoose
+- **Authentication**: JWT (Token-based)
+- **Real-time**: Socket.io
+- **Map Integration**: Leaflet + Leaflet Routing Machine
+- **Reporting**: PDFKit, json2csv
+
+---
+
+## 🚀 Deployment
+
+- **Frontend**: Deployed to [Vercel](https://excel-courier-parcel-frontend.vercel.app/)
+- **Backend**: Deployed to [Render](https://excel-courier-parcel-backend-1.onrender.com/)
